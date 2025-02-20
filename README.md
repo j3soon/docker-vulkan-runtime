@@ -21,7 +21,7 @@ Run:
 
 ```sh
 xhost +local:docker
-docker run --rm -it --gpus all --network=host \
+docker run --rm -it --runtime=nvidia --gpus all --network=host \
     -e DISPLAY=$DISPLAY \
     -v /tmp/.X11-unix:/tmp/.X11-unix \
     -v $HOME/.Xauthority:/home/user/.Xauthority \
@@ -29,3 +29,11 @@ docker run --rm -it --gpus all --network=host \
 # in the container
 vkcube
 ```
+
+> Please note that the `--runtime=nvidia` flag is preferred but not required.
+
+## References
+
+- <https://gitlab.com/nvidia/container-images/opengl>
+- <https://gitlab.com/nvidia/container-images/vulkan>
+- <https://catalog.ngc.nvidia.com/orgs/nvidia/containers/isaac-sim/layers>
