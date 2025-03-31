@@ -24,7 +24,7 @@ xhost +local:docker
 docker run --rm -it --runtime=nvidia --gpus all --network=host \
     -e DISPLAY=$DISPLAY \
     -v /tmp/.X11-unix:/tmp/.X11-unix \
-    -v $HOME/.Xauthority:/home/user/.Xauthority \
+    -v $HOME/.Xauthority:/root/.Xauthority \
     j3soon/vulkan-runtime bash
 # in the container
 vkcube
